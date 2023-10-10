@@ -10,16 +10,20 @@ $('#extracurricularContent').hide();
 
 var currentUrl = window.location.href;
 var myArray = currentUrl.split("#");
-if (myArray[1] != ''){
-	console.log(myArray[1])
-	clearActiveLinks();
-	$('#'+myArray[1]).show();
+if (myArray.length >=2) {
+	if (myArray[1] != '') {
+		//console.log(myArray[1])
+		clearActiveLinks();
+		$('#' + myArray[1]).show();
 
-	// Hide other contents
-	clearActiveDivs();
+		// Hide other contents
+		clearActiveDivs();
 
-	// Show current content
-	activateDiv('#'+myArray[1]);
+		// Show current content
+		activateDiv('#' + myArray[1]);
+	}
+}else{
+	$('#aboutmeContent').show();
 }
 
 
